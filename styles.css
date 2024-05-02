@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Dark background color */
+    color: #00ff00; /* Green text color */
+    font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+    overflow: hidden; /* Hide overflowing content */
+    background-image:url(hacker\ 5.jpeg )  ;
+  }
+  
+  .matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to go through the matrix */
+    z-index: -1; /* Place the matrix behind other content */
+    background-image: 
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1%, transparent 1%),
+      linear-gradient(to right, rgba(0, 0, 0, 0.1) 1%, transparent 1%);
+    background-size: 1px 1px; /* Size of individual matrix pixels */
+    animation: matrix-flow 10s linear infinite; /* Matrix animation */
+  }
+  
+  @keyframes matrix-flow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  .clock-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: transparent; /* Transparent background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s ease;
+  }
+  
+  .clock-container:hover {
+    background-color: #000000; /* Change background color to black on hover */ box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  }
+  
+  
+  
+  .clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 1;
+    animation: fadeIn 1s forwards 0.2s;
+    font-size: 4rem; /* Increased font size for the clock */
+    padding: 20px; /* Increased padding for the clock */
+    box-shadow: 0 0 20px rgba(7, 53, 1, 0.5); /* Black shadow around the clock */
+  }
+  
+  .clock:hover {
+    transform: translate(-50%, -50%) scale(1.0); /* Zoom in effect on hover */
+  }
+  
+  .time, .date {
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s;
+  }
+  
+  .time {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.5); /* Green text shadow */
+  }
+  
+  .date {
+    font-size: 1.5rem;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
